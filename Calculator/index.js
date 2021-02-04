@@ -1,57 +1,32 @@
 function Calculator(startValue) {
   if (new.target) {
-    this.innerValue = startValue;
-    this.calculateQueue = [];
-    function AddToCalculateQueue(func, arg, priotiry) {
-      this.calculateQueue.push({ func, arg, priotiry });
-    }
+    this._innerExpression = String(startValue);
     this.plus = (someValue) => {
-      AddToCalculateQueue.apply(this, [
-        (value) => (this.innerValue += value),
-        someValue,
-        1,
-      ]);
+      this._innerExpression += `+${someValue}`;
       return this;
     };
     this.multiply = (someValue) => {
-      AddToCalculateQueue.apply(this, [
-        (value) => (this.innerValue *= value),
-        someValue,
-        2,
-      ]);
+      this._innerExpression += `*${someValue}`;
       return this;
     };
     this.minus = (someValue) => {
-      AddToCalculateQueue.apply(this, [
-        (value) => (this.innerValue -= value),
-        someValue,
-        1,
-      ]);
+      this._innerExpression += `-${someValue}`;
       return this;
     };
     this.divide = (someValue) => {
-      AddToCalculateQueue.apply(this, [
-        (value) => (this.innerValue /= value),
-        someValue,
-        2,
-      ]);
+      this._innerExpression += `/${someValue}`;
       return this;
     };
     this.calculate = () => {
-      function compare(a, b) {
-        if (a.priotiry < b.priotiry) {
-          return -1;
+      "strict mode";
+      let allowedChars = "1234567890.+*-/";
+      for (let i = 0; i < this._innerExpression.length; i++) {
+        if (!allowedChars.includes(this._innerExpression[i])) {
+          throw new Error("Unknown characters in expression");
         }
-        if (a.priotiry > b.priotiry) {
-          return 1;
-        }
-        return 0;
       }
-      this.calculateQueue.sort(compare);
-      for (let i = 0; i < this.calculateQueue.length; i++) {
-        this.calculateQueue[i].func(this.calculateQueue[i].arg);
-      }
-      return this.innerValue;
+      let result = new Function("return " + this._innerExpression);
+      return result();
     };
   } else {
     throw new Error('Calculator executing without "new"');
