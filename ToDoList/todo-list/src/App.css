@@ -1,0 +1,95 @@
+.fixed-header {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #3f72af;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7%;
+  position: fixed;
+  color: white;
+}
+.fixed-header nav a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  padding: 10px;
+  display: inline-block;
+}
+.fixed-header-title {
+  font-size: x-large;
+  width: 10%;
+}
+
+.fixed-header-navigation {
+  width: 50%;
+  top: 15%;
+  position: absolute;
+  display: inline-block;
+}
+.fixed-header-button-add-category {
+  position: absolute;
+  top: 15%;
+  left: 85%;
+}
+.fixed-header-button-add-task {
+  position: absolute;
+  top: 15%;
+  left: 85%;
+}
+.task-view {
+  margin-top: 4%;
+}
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  min-width: 330px;
+  position: relative;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+
+  border-radius: 5px;
+  border: 1px solid #888;
+  width: 40%;
+}
+.modal-title {
+  font-size: xx-large;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #3f72af;
+  margin-top: 0;
+  float: left;
+}
+.modal-content-button {
+  margin-top: 0;
+  float: right;
+  color: #3f72af;
+  font-weight: 1000;
+  font-size: xx-large;
+  font-family: Arial, sans-serif;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  border: none;
+}
+.modal-inner-content {
+  clear: both;
+}
+.modal-content-button:hover,
+.modal-content-button:focus {
+  color: #2d4f79;
+  text-decoration: none;
+  cursor: pointer;
+}
