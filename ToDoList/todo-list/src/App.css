@@ -9,6 +9,9 @@
   position: fixed;
   color: white;
 }
+body {
+  background-color: #dbe2ef;
+}
 .fixed-header nav a {
   color: rgb(255, 255, 255);
   text-decoration: none;
@@ -36,7 +39,8 @@
   top: 15%;
   left: 85%;
 }
-.task-view {
+.task-view,
+.category-view {
   margin-top: 4%;
 }
 .modal {
@@ -54,13 +58,13 @@
   min-width: 330px;
   position: relative;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-  background-color: #fefefe;
+  background-color: #dbe2ef;
   margin: 15% auto;
   padding: 20px;
 
   border-radius: 5px;
   border: 1px solid #888;
-  width: 40%;
+  width: 35%;
 }
 .modal-title {
   font-size: xx-large;
@@ -87,9 +91,107 @@
 .modal-inner-content {
   clear: both;
 }
+.modal-message {
+  float: left;
+  font-size: medium;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.modal-content-confirm {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 46px;
+  width: 50%;
+  float: right;
+  min-width: 112px;
+  min-height: 46px;
+  color: #ffffff;
+  background: #3f72af;
+  border: 2px solid #3f72af;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.modal-content-cancel {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  display: block;
+  line-height: 46px;
+  min-width: 112px;
+  min-height: 46px;
+  color: #ffffff;
+  float: right;
+  background: #3f72af;
+  border: 2px solid #3f72af;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+.modal-content-confirm :hover {
+  background: #2d4f79;
+  border: 2px solid #2d4f79;
+}
 .modal-content-button:hover,
 .modal-content-button:focus {
   color: #2d4f79;
-  text-decoration: none;
   cursor: pointer;
+}
+.edit-icon,
+.category-icon,
+.remove-icon {
+  filter: invert(43%) sepia(13%) saturate(2140%) hue-rotate(173deg)
+    brightness(94%) contrast(92%);
+  height: 30px;
+  cursor: pointer;
+}
+.remove-icon:hover,
+.edit-icon:hover,
+.category-icon:hover {
+  filter: invert(29%) sepia(15%) saturate(1957%) hue-rotate(173deg)
+    brightness(93%) contrast(93%);
+}
+.edit-icon {
+  float: right;
+}
+.remove-icon {
+  float: right;
+}
+.list-item-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-right: 15px;
+  float: left;
+}
+.list-item {
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 3px solid #3f72af;
+  width: 50%;
+  background-image: linear-gradient(#b6ceee, #b6ceee);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 0%;
+}
+.list-item:hover {
+  background-size: 100% 100%;
+}
+.list-item-description {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 0px 15px 15px 15px;
+  color: #7f7f7f;
+}
+
+.fixed-header-button-categories:hover {
+  color: #8fb6ff;
+}
+
+.fixed-header-button-tasks:hover {
+  color: #8fb6ff;
 }
