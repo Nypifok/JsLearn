@@ -2,46 +2,64 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background-color: #3f72af;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 7%;
   position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 8.9%;
   color: white;
 }
+
 body {
+  overflow: hidden;
+  position: relative;
+
+  width: 100%;
   background-color: #dbe2ef;
 }
 .fixed-header nav a {
   color: rgb(255, 255, 255);
   text-decoration: none;
-  padding: 10px;
-  display: inline-block;
 }
 .fixed-header-title {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: inline-block;
   font-size: x-large;
-  width: 10%;
+  margin-left: 1.25%;
+  white-space: nowrap;
 }
 
 .fixed-header-navigation {
-  width: 50%;
-  top: 15%;
   position: absolute;
   display: inline-block;
+  top: 50%;
+  transform: translate(0, -50%);
+  white-space: nowrap;
+
+  margin-left: 12.7%;
 }
-.fixed-header-button-add-category {
-  position: absolute;
-  top: 15%;
-  left: 85%;
-}
+.fixed-header-button-add-category,
 .fixed-header-button-add-task {
+  top: 50%;
+  transform: translate(0, -50%);
   position: absolute;
-  top: 15%;
-  left: 85%;
+  white-space: nowrap;
+  display: inline-block;
+  left: 89%;
+  right: 11%;
 }
+
 .task-view,
 .category-view {
-  margin-top: 4%;
+  margin-top: 4.5%;
+  width: 100%;
+}
+.task-view ul {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 .modal {
   position: fixed;
@@ -55,12 +73,12 @@ body {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .modal-content {
-  min-width: 330px;
+  min-width: 41%;
   position: relative;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
   background-color: #dbe2ef;
   margin: 15% auto;
-  padding: 20px;
+  padding: 24px;
 
   border-radius: 5px;
   border: 1px solid #888;
@@ -71,11 +89,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #3f72af;
-  margin-top: 0;
+  margin-top: 8px;
   float: left;
 }
 .modal-content-button {
-  margin-top: 0;
   float: right;
   color: #3f72af;
   font-weight: 1000;
@@ -98,6 +115,8 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .modal-content-confirm {
+  margin: 24px 0 0 auto;
+  float: right;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-style: normal;
@@ -105,7 +124,6 @@ body {
   font-size: 20px;
   line-height: 46px;
   width: 50%;
-  float: right;
   min-width: 112px;
   min-height: 46px;
   color: #ffffff;
@@ -113,25 +131,29 @@ body {
   border: 2px solid #3f72af;
   box-sizing: border-box;
   border-radius: 4px;
+  display: inline;
 }
 .modal-content-cancel {
+  margin: 24px auto 0 24px;
+  float: right;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
-  display: block;
   line-height: 46px;
   min-width: 112px;
   min-height: 46px;
-  color: #ffffff;
-  float: right;
-  background: #3f72af;
+  color: #3f72af;
+  display: inline;
+  background: none;
   border: 2px solid #3f72af;
   box-sizing: border-box;
   border-radius: 4px;
 }
-.modal-content-confirm :hover {
+.modal-content-confirm :hover,
+.modal-content-confirm :focus {
+  cursor: pointer;
   background: #2d4f79;
   border: 2px solid #2d4f79;
 }
@@ -145,28 +167,41 @@ body {
 .remove-icon {
   filter: invert(43%) sepia(13%) saturate(2140%) hue-rotate(173deg)
     brightness(94%) contrast(92%);
-  height: 30px;
+  height: 24px;
   cursor: pointer;
 }
 .remove-icon:hover,
-.edit-icon:hover,
-.category-icon:hover {
+.edit-icon:hover {
   filter: invert(29%) sepia(15%) saturate(1957%) hue-rotate(173deg)
     brightness(93%) contrast(93%);
 }
-.edit-icon {
+.edit-icon,
+.remove-icon {
+  margin-top: 7px;
   float: right;
 }
-.remove-icon {
-  float: right;
+.category-icon:hover {
+  cursor: default;
+}
+.category-icon {
+  padding-right: 4px;
+  margin-top: 5px;
 }
 .list-item-title {
+  padding-right: 16px;
+  margin-top: 6px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: bold;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin-left: 16px;
   float: left;
+}
+.list-item-category-title {
+  position: absolute;
+  margin-top: 7px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #3f72af;
 }
 .list-item {
   margin-left: auto;
@@ -182,6 +217,7 @@ body {
   background-size: 100% 100%;
 }
 .list-item-description {
+  display: inline-block;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   padding: 0px 15px 15px 15px;
@@ -194,4 +230,66 @@ body {
 
 .fixed-header-button-tasks:hover {
   color: #8fb6ff;
+}
+.text-input {
+  display: block;
+  margin: 15px 0 0 0;
+  position: relative;
+  border: 2px solid #3f72af;
+  border-radius: 4px;
+}
+.text-input-field {
+  min-height: 46px;
+  line-height: 20px;
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+}
+.text-input-field {
+  padding: 5px;
+  overflow: hidden;
+  min-height: 20px;
+  max-height: 300px;
+  line-height: 20px;
+  resize: vertical;
+
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.text-input-required {
+  color: red;
+}
+.text-input-title {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  position: absolute;
+  left: 12px;
+  top: -17px;
+  background-color: #dbe2ef;
+  border-radius: 4px;
+  color: #3f72af;
+}
+.category-selector {
+  margin: 15px 0 0 0;
+  position: relative;
+  border: 2px solid #3f72af;
+  border-radius: 4px;
+
+  box-sizing: border-box;
+}
+select {
+  border: none;
+  outline: none;
+  background: none;
+  width: 100%;
+}
+option {
+  background-color: #dbe2ef;
+}
+.modal-buttons {
+  overflow: hidden;
 }
